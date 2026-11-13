@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فیتلند | جزئیات محصول</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style-home.css" />
+  <link rel="stylesheet" href="./styles/product.css" />
+  <style>
+    ul,
+    ol,
+    li {
+      list-style: none;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <a class="brand" href="./home.html" aria-label="صفحه اصلی فیتلند">
+          <span class="brand__name" dir="ltr">FitLand</span>
+          <span class="brand__caption">فروشگاه لوازم ورزشی فیتلند</span>
+        </a>
+        <form class="search-box" role="search" id="search-form">
+          <label class="visually-hidden" for="site-search">جستجوی محصولات</label>
+          <button type="submit" aria-label="جستجو"><i class="bi bi-search" aria-hidden="true"></i></button>
+          <input id="site-search" type="search" placeholder="جستجو" autocomplete="off" />
+        </form>
+        <div class="header-actions">
+          <a href="./profile.html" class="account-button account-button--icon" aria-label="حساب کاربری">
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <a class="cart-button" href="./checkout.html#cart" aria-label="سبد خرید">
+            <i class="bi bi-bag" aria-hidden="true"></i>
+            <span class="cart-count" id="cart-count">۰</span>
+          </a>
+        </div>
+        <button class="mobile-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-menu" aria-controls="mobile-menu" aria-label="باز کردن منو">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="desktop-navigation" aria-label="منوی اصلی">
+        <div class="navigation-group">
+          <a href="./home.html#bestsellers">مردانه</a>
+          <a href="./women-product.html">زنانه</a>
+          <a href="./home.html#special-offers">بچگانه</a>
+          <a href="./home.html#sport-shoes">لوازم ورزشی</a>
+          <a href="./home.html#cycling-offers">شیکر و جاگ</a>
+        </div>
+        <div class="navigation-group navigation-group--featured">
+          <a href="./home.html#new-products"><i class="bi bi-star" aria-hidden="true"></i>جدیدترین محصولات</a>
+          <a href="./home.html#special-offers"><i class="bi bi-lightning" aria-hidden="true"></i>تخفیفات ویژه</a>
+          <a href="./home.html#bestsellers"><i class="bi bi-patch-check" aria-hidden="true"></i>پرفروشترینها</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <nav class="pdp-crumb" id="pdp-crumb" aria-label="مسیر صفحه"></nav>
+
+      <section class="pdp" aria-labelledby="pdp-title">
+        <div class="pdp-gallery">
+          <img class="pdp-photo" id="pdp-photo" alt="" />
+          <div class="pdp-thumbs" id="pdp-thumbs"></div>
+        </div>
+        <div class="pdp-info">
+          <h1 id="pdp-title"></h1>
+          <div class="pdp-price-row">
+            <strong class="pdp-price" id="pdp-price"></strong>
+            <span class="pdp-off">٪۱۵</span>
+          </div>
+          <div class="pdp-field">
+            <span>سایز</span>
+            <div class="pdp-sizes" id="pdp-sizes"></div>
+          </div>
+          <div class="pdp-field">
+            <span>رنگ</span>
+            <div class="pdp-colors" id="pdp-colors"></div>
+          </div>
+          <div class="pdp-buy">
+            <button class="btn btn-orange pdp-add" type="button" id="pdp-add">
+              <i class="bi bi-bag" aria-hidden="true"></i>
+              افزودن به سبد خرید
+            </button>
+            <div class="pdp-buy__tools">
+              <div class="pdp-qty">
+                <button type="button" data-qty="minus" aria-label="کاهش تعداد"><i class="qty-minus" aria-hidden="true"></i></button>
+                <span id="pdp-qty">1</span>
+                <button type="button" data-qty="plus" aria-label="افزایش تعداد"><i class="qty-plus" aria-hidden="true"></i></button>
+              </div>
+              <button class="pdp-icon" type="button" id="pdp-share" aria-label="اشتراک گذاری"><i class="bi bi-share" aria-hidden="true"></i></button>
+              <button class="pdp-icon" type="button" id="pdp-fav" aria-pressed="false" aria-label="علاقه‌مندی"><i class="bi bi-heart" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <p class="pdp-status" id="pdp-status" role="status"></p>
+        </div>
+      </section>
+
+      <div class="pdp-tabs" role="tablist" aria-label="اطلاعات محصول">
+        <button class="pdp-tab is-active" type="button" data-tab="specs" role="tab" aria-selected="true">ویژگی های محصول</button>
+        <button class="pdp-tab" type="button" data-tab="about" role="tab" aria-selected="false">توضیحات</button>
+        <button class="pdp-tab" type="button" data-tab="reviews" role="tab" aria-selected="false">نظرات</button>
+      </div>
+
+      <div class="pdp-detail">
+        <section id="pdp-block-specs">
+          <table class="pdp-spec">
+            <tbody id="pdp-specs"></tbody>
+          </table>
+        </section>
+        <div class="pdp-detail__side">
+          <p class="pdp-about" id="pdp-about"></p>
+          <div class="pdp-feedback" id="pdp-block-reviews">
+            <form class="pdp-review-form" id="pdp-review-form">
+              <h2>نظر خود را بنویسید</h2>
+              <input id="review-name" type="text" placeholder="نام" autocomplete="name" />
+              <textarea id="review-text" placeholder="نظر شما"></textarea>
+              <div class="pdp-review-actions">
+                <button class="pdp-review-submit" type="submit">ثبت نظر</button>
+                <div class="pdp-score" id="pdp-score"></div>
+              </div>
+            </form>
+            <div id="pdp-reviews"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="rel-head">محصولات مرتبط</h2>
+      <div class="rel-grid" id="pdp-related"></div>
+    </div>
+
+    <section class="pdp-benefits" aria-label="مزایای خرید از فیتلند">
+      <div class="container pdp-benefits__layout">
+        <h2>با بیش از ده سال سابقه فروش لوازم ورزشی و لباس های ورزشی</h2>
+        <div class="pdp-benefits__list">
+          <div class="pdp-benefit">
+            <i class="bi bi-truck" aria-hidden="true"></i>
+            <span>ارسال سریع</span>
+          </div>
+          <div class="pdp-benefit">
+            <i class="bi bi-credit-card" aria-hidden="true"></i>
+            <span>پرداخت قسطی</span>
+          </div>
+          <div class="pdp-benefit">
+            <i class="bi bi-house" aria-hidden="true"></i>
+            <span>پرداخت در منزل</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-layout">
+        <section class="footer-social">
+          <h2>برای دریافت تخفیفهای بیشتر ما را دنبال کنید!</h2>
+          <div class="social-links">
+            <a href="https://www.instagram.com/" aria-label="اینستاگرام" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="https://telegram.org/" aria-label="تلگرام" target="_blank" rel="noopener noreferrer"><i class="bi bi-telegram" aria-hidden="true"></i></a>
+            <a href="https://www.whatsapp.com/" aria-label="واتساپ" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/" aria-label="یوتیوب" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          </div>
+          <form class="newsletter" id="newsletter">
+            <label for="newsletter-email">خبرنامه فیتلند</label>
+            <div class="newsletter__field">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+              <input id="newsletter-email" type="email" placeholder="ایمیل خود را وارد کنید... ( کار نمیکنه :> )" required autocomplete="email" />
+              <button type="submit">ثبت</button>
+            </div>
+            <p class="newsletter__status" role="status"></p>
+          </form>
+        </section>
+        <nav class="footer-links" aria-label="پیوندهای راهنما">
+          <section class="footer-group footer-group--guide">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-guide">
+                راهنمای خرید
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+            <ul id="footer-guide">
+              <li><a href="./home.html#new-products">راهنمای ثبت سفارش</a></li>
+              <li><a href="#newsletter">شیوههای پرداخت</a></li>
+              <li><a href="#newsletter">نحوه ارسال سفارشها</a></li>
+              <li><a href="#newsletter">نحوه پیگیری محصول</a></li>
+            </ul>
+          </section>
+          <section class="footer-group footer-group--popular">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-popular">
+                محبوبترینها
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+            <ul id="footer-popular">
+              <li><a href="./home.html#bestsellers">لباس مردانه</a></li>
+              <li><a href="./home.html#sport-shoes">کفش فوتبال</a></li>
+              <li><a href="./home.html#cycling-offers">دوچرخه</a></li>
+              <li><a href="./home.html#new-products">لباس زنانه</a></li>
+            </ul>
+          </section>
+          <section class="footer-group footer-group--contact">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-contact">
+                اطلاعات تماس
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+            <ul id="footer-contact">
+              <li>نشانی فروشگاه را اینجا وارد کنید</li>
+              <li>شماره تماس فروشگاه را وارد کنید</li>
+              <li>پست الکترونیک <span class="footer-accent" dir="ltr">hello@example.com</span></li>
+              <li>ساعت کاری شنبه تا چهارشنبه 9 تا 17</li>
+            </ul>
+          </section>
+          <section class="footer-group footer-group--service">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-service">
+                خدمات مشتریان
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+            <ul id="footer-service">
+              <li><a href="./faq.html">سوالات متداول</a></li>
+              <li><a href="#newsletter">حریم خصوصی</a></li>
+              <li><a href="#newsletter">گزارش ایراد در سایت</a></li>
+              <li><a href="#newsletter">شرایط بازگرداندن محصول</a></li>
+            </ul>
+          </section>
+        </nav>
+        <section class="footer-about">
+          <h2>فروشگاه اینترنتی فیتلند</h2>
+          <div class="footer-about__text" id="about-text">
+            <p>
+              فروشگاه لوازم ورزشی فیتلند در سال ۱۴۰۳ کار خود را به صورت
+              حرفهای آغاز کرد و با هدف ارائه جدیدترین محصولات ورزشی از
+              قبیل لوازم فوتبال، فوتسال، والیبال، بسکتبال، تنیس و همچنین
+              پوشاک ورزشی و تجهیزات سفر فعالیت میکند. همراه با گارانتی
+              اصالت و سلامت فیزیکی و با سریعترین روشهای ارسال، محصولات
+              در اختیار مشتریان قرار میگیرد.
+            </p>
+          </div>
+          <button class="about-more" type="button" aria-expanded="false" aria-controls="about-text">مشاهده بیشتر...</button>
+        </section>
+        <div class="footer-trust">
+          <div class="trust-logos">
+            <img src="./assests/Images/enamad.jpg" alt="نماد اعتماد الکترونیکی" loading="lazy" />
+            <img src="./assests/Images/shahrokh.jpg" alt="نشان ساماندهی" loading="lazy" />
+            <img src="./assests/Images/etehadie.jpg" alt="نشان اتحادیه کسبوکارهای مجازی" loading="lazy" />
+          </div>
+          <p>یک هفته ضمانت بازگشت (اینم فیکه) <span aria-hidden="true">👍👍</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          <i class="bi bi-shield-lock" aria-hidden="true"></i>
+          تمامی حقوق حقوقی و معنوی این وبسایت برای مجموعه فیتلند محفوظ میباشد. (همش دست ماست)
+        </p>
+        <p>
+          <i class="bi bi-buildings" aria-hidden="true"></i>
+          طراحی شده توسط I.GH و A.bol
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobile-menu" aria-labelledby="mobile-menu-title">
+    <div class="offcanvas-header">
+      <h2 class="brand__name" id="mobile-menu-title" dir="ltr">FitLand</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="بستن منو"></button>
+    </div>
+    <div class="offcanvas-body mobile-navigation">
+      <a href="./home.html">صفحه اصلی</a>
+      <a href="./profile.html">حساب کاربری</a>
+      <a href="./checkout.html#cart">سبد خرید</a>
+      <a href="./women-product.html">زنانه</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./product.js"></script>
+</body>
+
+</html>

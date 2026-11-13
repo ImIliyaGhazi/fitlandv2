@@ -1,0 +1,157 @@
+.faq-page {
+  padding: 28px 0 64px;
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.faq-cats {
+  display: grid;
+  gap: 8px;
+}
+
+.faq-cat {
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  color: #243040;
+  background: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: right;
+  cursor: pointer;
+}
+
+.faq-cat.is-active {
+  color: #ff521c;
+  background: #feeee8;
+  border-color: #feeee8;
+}
+
+.faq-main h1 {
+  margin: 4px 0 18px;
+  color: #1c2430;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.faq-list {
+  display: grid;
+}
+
+.faq-item {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.faq-item h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.faq-item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 2px;
+  border: 0;
+  color: #1c2430;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: right;
+  cursor: pointer;
+}
+
+.faq-item button i {
+  flex: none;
+  color: #ff521c;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.faq-item.is-open button i {
+  transform: rotate(180deg);
+}
+
+.faq-item__a {
+  display: none;
+  margin: 0;
+  padding: 0 2px 16px;
+  color: #5c6770;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.faq-item.is-open .faq-item__a {
+  display: block;
+}
+
+.faq-empty {
+  margin: 8px 0 0;
+  color: #8b919a;
+}
+
+@media (max-width: 991.98px) {
+  .faq-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .faq-cat {
+    height: 46px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .faq-page {
+    padding-top: 16px;
+  }
+
+  .faq-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-main {
+    display: contents;
+  }
+
+  .faq-main h1 {
+    order: 1;
+    margin-bottom: 14px;
+    font-size: 22px;
+  }
+
+  .faq-cats {
+    order: 2;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .faq-cats::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faq-list {
+    order: 3;
+  }
+
+  .faq-cat {
+    flex: 0 0 auto;
+    height: 40px;
+  }
+}

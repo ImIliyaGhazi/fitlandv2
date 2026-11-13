@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فیتلند | سبد خرید و تسویه</title>
+  <script>
+    if (matchMedia("(max-width: 767.98px)").matches) {
+      document.documentElement.classList.add("is-mobile");
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style-home.css" />
+  <link rel="stylesheet" href="./styles/checkout.css?v=fail3" />
+  <link rel="stylesheet" href="./styles/fit-input.css" />
+  <style>
+    ul,
+    ol,
+    li {
+      list-style: none;
+    }
+  </style>
+</head>
+
+<body data-checkout="cart">
+  <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+
+  <header class="site-header profile-header">
+    <div class="container">
+      <div class="header-main">
+        <a class="brand" href="./home.html" aria-label="صفحه اصلی فیتلند">
+          <span class="brand__name" dir="ltr">FitLand</span>
+          <span class="brand__caption">فروشگاه لوازم ورزشی فیتلند</span>
+        </a>
+        <form class="search-box" role="search" id="search-form">
+          <label class="visually-hidden" for="site-search">جستجوی محصولات</label>
+          <button type="submit" aria-label="جستجو"><i class="bi bi-search" aria-hidden="true"></i></button>
+          <input id="site-search" type="search" placeholder="جستجو" autocomplete="off" />
+        </form>
+        <div class="header-actions">
+          <a href="./profile.html" class="account-button account-button--icon" aria-label="حساب کاربری">
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <a class="cart-button" href="#cart" aria-label="سبد خرید">
+            <i class="bi bi-bag" aria-hidden="true"></i>
+            <span class="cart-count" id="cart-count">۰</span>
+          </a>
+        </div>
+        <button class="mobile-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-menu" aria-controls="mobile-menu" aria-label="باز کردن منو">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="desktop-navigation" aria-label="منوی اصلی">
+        <div class="navigation-group">
+          <a href="./women-product.html">زنانه</a>
+          <a href="./home.html#special-offers">بچگانه</a>
+          <a href="./home.html#sport-shoes">لوازم ورزشی</a>
+          <a href="./home.html#cycling-offers">شیکر و جاگ</a>
+        </div>
+        <div class="navigation-group navigation-group--featured">
+          <a href="./home.html#new-products"><i class="bi bi-star" aria-hidden="true"></i>جدیدترین محصولات</a>
+          <a href="./home.html#special-offers"><i class="bi bi-lightning" aria-hidden="true"></i>تخفیفات ویژه</a>
+          <a href="./home.html#bestsellers"><i class="bi bi-patch-check" aria-hidden="true"></i>پرفروشترینها</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="checkout">
+    <div class="container">
+      <ol class="checkout-steps" aria-label="مراحل خرید">
+        <li><button type="button" data-go="cart">سبد خرید</button></li>
+        <li><button type="button" data-go="address">آدرس</button></li>
+        <li><button type="button" data-go="ship">ارسال</button></li>
+        <li><button type="button" data-go="pay">پرداخت</button></li>
+      </ol>
+
+      <section class="checkout-step" data-step="cart" aria-labelledby="cart-title">
+        <h1 class="visually-hidden" id="cart-title">سبد خرید</h1>
+        <div class="cart-layout">
+          <div class="cart-main">
+            <div id="bag-list"></div>
+            <div class="empty-state" id="bag-empty" hidden>
+              <p>سبد خرید شما خالی است.</p>
+              <a class="btn btn-orange" href="./women-product.html">رفتن به محصولات</a>
+            </div>
+          </div>
+          <div class="cart-side">
+            <ol class="cart-progress" aria-label="مراحل خرید">
+              <li class="is-active"><button type="button" data-go="cart"><i class="bi bi-cart3" aria-hidden="true"></i>سبد خرید</button></li>
+              <li><button type="button" data-go="address">ثبت نشانی</button></li>
+              <li><button type="button" data-go="pay">پرداخت</button></li>
+            </ol>
+          <aside class="cart-summary" aria-label="خلاصه سبد">
+            <h2>کد تخفیف</h2>
+            <form class="coupon" id="coupon-form">
+              <button type="submit">ثبت <i class="bi bi-check-circle" aria-hidden="true"></i></button>
+              <input id="coupon-code" type="text" placeholder="" autocomplete="off" aria-label="کد تخفیف" />
+            </form>
+            <dl class="summary-lines" id="cart-summary"></dl>
+            <button class="btn btn-orange checkout-next" type="button" data-next="address">
+              تکمیل فرایند خرید
+              <i class="bi bi-arrow-left" aria-hidden="true"></i>
+            </button>
+            <p class="checkout-note" id="cart-note" role="status"></p>
+          </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="checkout-step" data-step="address" hidden aria-labelledby="address-title">
+        <h1 class="checkout-title" id="address-title"><i></i>انتخاب آدرس</h1>
+        <div class="address-layout">
+          <div>
+            <div class="address-choice" id="address-choice" role="radiogroup" aria-label="آدرس‌های ذخیره‌شده"></div>
+            <a class="text-link" href="./profile.html#addresses"><i class="bi bi-plus-lg"></i>ثبت آدرس جدید در حساب کاربری</a>
+            <div class="address-form">
+              <label>استان
+                <select id="ship-province"></select>
+              </label>
+              <label>شهر
+                <select id="ship-city"></select>
+              </label>
+              <label class="fit-field"><span>پلاک</span><input id="ship-plaque" /></label>
+              <label class="fit-field"><span>واحد</span><input id="ship-unit" /></label>
+              <label class="is-wide fit-field"><span>کد پستی</span><input id="ship-postal" inputmode="numeric" /></label>
+              <label class="fit-field fit-field--hint"><span>شماره تماس</span><input id="ship-phone" inputmode="tel" required /></label>
+              <label class="fit-field fit-field--hint"><span>نام گیرنده</span><input id="ship-name" required /></label>
+            </div>
+          </div>
+          <div class="address-side">
+            <ol class="cart-progress" aria-label="مراحل خرید">
+              <li><button type="button" data-go="cart"><i class="bi bi-cart3" aria-hidden="true"></i>سبد خرید</button></li>
+              <li class="is-active"><button type="button" data-go="address">ثبت نشانی</button></li>
+              <li><button type="button" data-go="pay">پرداخت</button></li>
+            </ol>
+            <div class="map-panel">
+            <p>موقعیت آدرس انتخاب‌شده روی گوگل مپس.</p>
+            <div id="address-map" dir="ltr"></div>
+            <button class="btn btn-orange checkout-next" type="button" data-next="ship">تایید آدرس و ادامه</button>
+            <p class="checkout-note" id="address-note" role="status"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="checkout-step" data-step="ship" hidden aria-labelledby="ship-title">
+        <ol class="cart-progress cart-progress--page" aria-label="مراحل خرید">
+          <li><button type="button" data-go="cart"><i class="bi bi-cart3" aria-hidden="true"></i>سبد خرید</button></li>
+          <li class="is-active"><button type="button" data-go="address">ثبت نشانی</button></li>
+          <li><button type="button" data-go="pay">پرداخت</button></li>
+        </ol>
+        <h1 class="checkout-title" id="ship-title"><i></i>شیوه ارسال</h1>
+        <div class="ship-layout">
+          <div>
+            <p class="ship-address" id="ship-address-line"></p>
+            <div class="ship-methods">
+              <label>
+                <input type="radio" name="ship" value="normal" checked />
+                <span><strong>ارسال عادی</strong><small>۳ تا ۵ روز کاری · ۶۰,۰۰۰ تومان</small></span>
+              </label>
+              <label>
+                <input type="radio" name="ship" value="fast" />
+                <span><strong>ارسال سریع</strong><small>۱ تا ۲ روز کاری · ۱۲۰,۰۰۰ تومان</small></span>
+              </label>
+            </div>
+            <button class="btn btn-orange checkout-next" type="button" data-next="pay">ادامه به پرداخت</button>
+          </div>
+          <div class="map-panel map-panel--mini">
+            <div id="ship-map" dir="ltr"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="checkout-step" data-step="pay" hidden aria-labelledby="pay-title">
+        <ol class="cart-progress cart-progress--page" aria-label="مراحل خرید">
+          <li><button type="button" data-go="cart"><i class="bi bi-cart3" aria-hidden="true"></i>سبد خرید</button></li>
+          <li><button type="button" data-go="address">ثبت نشانی</button></li>
+          <li class="is-active"><button type="button" data-go="pay">پرداخت</button></li>
+        </ol>
+        <h1 class="checkout-title" id="pay-title"><i></i>پرداخت</h1>
+        <div class="checkout-grid">
+          <div>
+            <div class="pay-methods">
+              <label>
+                <input type="radio" name="pay" value="gateway" />
+                <i class="bi bi-credit-card" aria-hidden="true"></i>
+                <span><strong>درگاه بانکی</strong><small>پرداخت آزمایشی، بدون کسر پول</small></span>
+              </label>
+              <label>
+                <input type="radio" name="pay" value="cod" />
+                <i class="bi bi-house-heart" aria-hidden="true"></i>
+                <span><strong>پرداخت در محل</strong><small>هنگام تحویل سفارش</small></span>
+              </label>
+            </div>
+            <p class="checkout-note" id="pay-note" role="status"></p>
+            <button class="btn btn-orange" type="button" id="pay-submit">پرداخت و ثبت سفارش</button>
+            <button class="text-link text-link--button" type="button" id="show-failed">پیش‌نمایش پرداخت ناموفق</button>
+          </div>
+          <aside class="summary-card" aria-label="خلاصه پرداخت">
+            <h2>مبلغ قابل پرداخت</h2>
+            <dl class="summary-lines" id="pay-summary"></dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="checkout-step" data-step="success" hidden aria-labelledby="success-title">
+        <div class="checkout-result checkout-result--ok">
+          <div>
+            <h1 id="success-title">سفارش شما ثبت شد</h1>
+            <p id="success-copy">پرداخت آزمایشی انجام شد و سفارشی از حساب شما کم نشده است.</p>
+            <p class="result-code">کد سفارش: <strong id="success-code"></strong></p>
+            <div class="result-actions">
+              <a class="btn btn-navy" href="./profile.html#orders">پیگیری در تاریخچه سفارشات</a>
+              <a class="btn btn-outline-navy" href="./home.html">بازگشت به فروشگاه</a>
+            </div>
+          </div>
+          <div class="checkout-result__art" aria-hidden="true">
+            <img src="./assests/Images/payment-success.png" alt="" width="168" height="149" />
+          </div>
+        </div>
+      </section>
+
+      <section class="checkout-step" data-step="failed" hidden aria-labelledby="failed-title">
+        <div class="fail-card">
+          <div class="fail-card__body">
+            <div class="fail-card__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34"><path d="M7 7l10 10M17 7L7 17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </div>
+            <h1 id="failed-title">پرداخت شما انجام نشد!</h1>
+            <p class="fail-card__copy">مهسای عزیز این پیام به منزله تایید نشدن خرید شماست. در صورت کسر هزینه از حساب شما، مبلغ پرداختی تا ۷۲ ساعت آینده به حساب شما برخواهدگشت.</p>
+            <hr class="fail-card__rule">
+            <p class="fail-card__code">شماره پیگیری پرداخت: <strong id="failed-code"></strong></p>
+            <div class="fail-card__actions">
+              <a class="fail-card__home" href="./home.html">صفحه اصلی <i class="bi bi-house-door" aria-hidden="true"></i></a>
+              <button class="fail-card__retry" type="button" data-go="pay">تلاش دوباره <i class="bi bi-arrow-clockwise" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <img class="fail-card__art" src="./assests/Images/payment-failed.png" alt="" />
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-layout">
+        <section class="footer-social">
+          <h2>برای دریافت تخفیفهای بیشتر ما را دنبال کنید!</h2>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/" aria-label="اینستاگرام" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://telegram.org/" aria-label="تلگرام" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-telegram" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.whatsapp.com/" aria-label="واتساپ" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.youtube.com/" aria-label="یوتیوب" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <form class="newsletter" id="newsletter">
+            <label for="newsletter-email">خبرنامه فیتلند</label>
+
+            <div class="newsletter__field">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+
+              <input id="newsletter-email" type="email" placeholder="ایمیل خود را وارد کنید... ( کار نمیکنه :> )"
+                required autocomplete="email" />
+
+              <button type="submit">ثبت</button>
+            </div>
+
+            <p class="newsletter__status" role="status"></p>
+          </form>
+        </section>
+
+        <nav class="footer-links" aria-label="پیوندهای راهنما">
+          <section class="footer-group footer-group--guide">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-guide">
+                راهنمای خرید
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-guide">
+              <li><a href="#new-products">راهنمای ثبت سفارش</a></li>
+              <li><a href="#newsletter">شیوههای پرداخت</a></li>
+              <li><a href="#newsletter">نحوه ارسال سفارشها</a></li>
+              <li><a href="#newsletter">نحوه پیگیری محصول</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--popular">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-popular">
+                محبوبترینها
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-popular">
+              <li><a href="#bestsellers">لباس مردانه</a></li>
+              <li><a href="#sport-shoes">کفش فوتبال</a></li>
+              <li><a href="#cycling-offers">دوچرخه</a></li>
+              <li><a href="#new-products">لباس زنانه</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--contact">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-contact">
+                اطلاعات تماس
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-contact">
+              <li>نشانی فروشگاه را اینجا وارد کنید</li>
+              <li>شماره تماس فروشگاه را وارد کنید</li>
+              <li>
+                پست الکترونیک
+                <span class="footer-accent" dir="ltr">
+                  hello@example.com
+                </span>
+              </li>
+              <li>ساعت کاری شنبه تا چهارشنبه 9 تا 17</li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--service">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-service">
+                خدمات مشتریان
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-service">
+              <li><a href="./faq.html">سوالات متداول</a></li>
+              <li><a href="#newsletter">حریم خصوصی</a></li>
+              <li><a href="#newsletter">گزارش ایراد در سایت</a></li>
+              <li><a href="#newsletter">شرایط بازگرداندن محصول</a></li>
+            </ul>
+          </section>
+        </nav>
+
+        <section class="footer-about">
+          <h2>فروشگاه اینترنتی فیتلند</h2>
+
+          <div class="footer-about__text" id="about-text">
+            <p>
+              فروشگاه لوازم ورزشی فیتلند در سال ۱۴۰۳ کار خود را به صورت
+              حرفهای آغاز کرد و با هدف ارائه جدیدترین محصولات ورزشی از
+              قبیل لوازم فوتبال، فوتسال، والیبال، بسکتبال، تنیس و همچنین
+              پوشاک ورزشی و تجهیزات سفر فعالیت میکند. همراه با گارانتی
+              اصالت و سلامت فیزیکی و با سریعترین روشهای ارسال، محصولات
+              در اختیار مشتریان قرار میگیرد.
+            </p>
+          </div>
+
+          <button class="about-more" type="button" aria-expanded="false" aria-controls="about-text">
+            مشاهده بیشتر...
+          </button>
+        </section>
+
+        <div class="footer-trust">
+          <div class="trust-logos">
+            <img src="./assests/Images/enamad.jpg" alt="نماد اعتماد الکترونیکی" loading="lazy" />
+            <img src="./assests/Images/shahrokh.jpg" alt="نشان ساماندهی" loading="lazy" />
+            <img src="./assests/Images/etehadie.jpg" alt="نشان اتحادیه کسبوکارهای مجازی" loading="lazy" />
+          </div>
+
+          <p>یک هفته ضمانت بازگشت (اینم فیکه) <span aria-hidden="true">👍👍</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          <i class="bi bi-shield-lock" aria-hidden="true"></i>
+          تمامی حقوق حقوقی و معنوی این وبسایت برای مجموعه فیتلند محفوظ
+          میباشد. (همش دست ماست)
+        </p>
+
+        <p>
+          <i class="bi bi-buildings" aria-hidden="true"></i>
+          طراحی شده توسط I.GH و A.bol
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobile-menu" aria-labelledby="mobile-menu-title">
+    <div class="offcanvas-header">
+      <h2 class="brand__name" id="mobile-menu-title" dir="ltr">FitLand</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="بستن منو"></button>
+    </div>
+    <div class="offcanvas-body mobile-navigation">
+      <a href="./home.html">صفحه اصلی</a>
+      <a href="./profile.html">حساب کاربری</a>
+      <a href="#cart">سبد خرید</a>
+      <a href="./women-product.html">زنانه</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./iran-cities.js"></script>
+  <script src="./checkout.js"></script>
+  <script src="./fit-select.js"></script>
+</body>
+
+</html>

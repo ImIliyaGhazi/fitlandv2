@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>فیتلند | فروشگاه لوازم ورزشی</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles/style-home.css" />
+  <style>
+    ul,
+    ol,
+    li {
+      list-style: none;
+    }
+  </style>
+
+  <script src="./main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+
+  <div class="announcement">
+    با عضویت در فیت لند اولین ارسال را مهمون ما باش :)
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-main">
+        <a class="brand" href="./home.html" aria-label="صفحه اصلی فیتلند">
+          <span class="brand__name" dir="ltr">FitLand</span>
+          <span class="brand__caption">فروشگاه لوازم ورزشی فیتلند</span>
+        </a>
+
+        <form class="search-box" role="search" id="search-form">
+          <label class="visually-hidden" for="site-search">
+            جستجوی محصولات
+          </label>
+
+          <button type="submit" aria-label="جستجو">
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+
+          <input id="site-search" name="q" type="search" placeholder="جستجو" autocomplete="off" />
+        </form>
+
+        <div class="header-actions">
+          <a href="./login.html" class="account-button">
+            <i class="bi bi-person" aria-hidden="true"></i>
+            <span>ثبتنام | ورود</span>
+          </a>
+
+          <button class="cart-button" type="button" aria-label="سبد خرید، بدون محصول" data-bs-toggle="modal"
+            data-bs-target="#cart-modal">
+            <i class="bi bi-bag" aria-hidden="true"></i>
+            <span class="cart-count">۰</span>
+          </button>
+        </div>
+
+        <button class="mobile-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-menu"
+          aria-controls="mobile-menu" aria-label="باز کردن منو">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="desktop-navigation" aria-label="منوی اصلی">
+        <div class="navigation-group">
+          <div class="nav-drop">
+            <a href="./men-product.html" aria-haspopup="true">مردانه</a>
+            <div class="mega">
+              <div class="mega__panel">
+                <div class="mega__cols">
+                  <div class="mega__col">
+                    <a class="mega__title" href="./men-product.html">لباس ورزشی مردانه</a>
+                    <a href="./men-product.html">ست لباس ورزشی</a>
+                    <a href="./men-product.html">تیشرت بلوز و استرج ورزشی</a>
+                    <a href="./men-product.html">رکابی ورزشی</a>
+                    <a href="./men-product.html">کیت ورزشی</a>
+                    <a href="./men-product.html">سویشرت</a>
+                    <a href="./men-product.html">هودی</a>
+                    <a href="./men-product.html">مایو</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="./men-product.html">شلوار ورزشی مردانه</a>
+                    <a href="./men-product.html">شلوار ورزشی</a>
+                    <a href="./men-product.html">شلوارک ورزشی</a>
+                    <a href="./men-product.html">لگ و نیم لگ</a>
+                    <a href="./men-product.html">جاگر</a>
+                    <a class="mega__title" href="./men-product.html">اکسسوری</a>
+                    <a href="./men-product.html">جوراب ورزشی</a>
+                    <a href="./men-product.html">کلاه ورزشی</a>
+                    <a href="./men-product.html">دستبند ورزشی</a>
+                    <a href="./men-product.html">هدبند</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="./men-product.html">کفش ورزشی</a>
+                    <a href="./men-product.html">کفش کوهنوردی</a>
+                    <a href="./men-product.html">کفش اسکیت</a>
+                    <a href="./men-product.html">کفش بسکتبال</a>
+                    <a href="./men-product.html">کفش کشتی</a>
+                    <a href="./men-product.html">کتانی رانینگ</a>
+                    <a href="./men-product.html">استوک</a>
+                    <a href="./men-product.html">دمپایی</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="./men-product.html">برند پیشنهادی</a>
+                    <a href="./men-product.html">nike</a>
+                    <a href="./men-product.html">the north face</a>
+                    <a href="./men-product.html">under armour</a>
+                    <a href="./men-product.html">adidas</a>
+                    <a href="./men-product.html">fila</a>
+                  </div>
+                </div>
+                <img class="mega__art" src="./assests/Images/menu/men.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-drop">
+            <a href="./women-product.html" aria-haspopup="true">زنانه</a>
+            <div class="mega">
+              <div class="mega__panel">
+                <div class="mega__cols">
+                  <div class="mega__col">
+                    <a class="mega__title" href="./women-product.html">لباس ورزشی زنانه</a>
+                    <a href="./women-product.html">ست لباس ورزشی</a>
+                    <a href="./women-product.html">تیشرت بلوز و استرج ورزشی</a>
+                    <a href="./women-product.html">نیم تنه ورزشی</a>
+                    <a href="./women-product.html">تاپ ورزشی</a>
+                    <a href="./women-product.html">کیت ورزشی</a>
+                    <a href="./women-product.html">سویشرت</a>
+                    <a href="./women-product.html">هودی</a>
+                    <a href="./women-product.html">مایو</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="./women-product.html">شلوار ورزشی زنانه</a>
+                    <a href="./women-product.html">شلوار ورزشی</a>
+                    <a href="./women-product.html">شلوارک ورزشی</a>
+                    <a href="./women-product.html">لگ و نیم لگ</a>
+                    <a href="./women-product.html">جاگر</a>
+                    <a class="mega__title" href="./women-product.html">اکسسوری</a>
+                    <a href="./women-product.html">جوراب ورزشی</a>
+                    <a href="./women-product.html">کلاه ورزشی</a>
+                    <a href="./women-product.html">دستبند ورزشی</a>
+                    <a href="./women-product.html">هدبند</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="./women-product.html">کفش ورزشی</a>
+                    <a href="./women-product.html">کفش کوهنوردی</a>
+                    <a href="./women-product.html">کفش اسکیت</a>
+                    <a href="./women-product.html">کفش بسکتبال</a>
+                    <a href="./women-product.html">کفش کشتی</a>
+                    <a href="./women-product.html">کتانی رانینگ</a>
+                    <a href="./women-product.html">استوک</a>
+                    <a href="./women-product.html">دمپایی</a>
+                    <a class="mega__title" href="./women-product.html">جوراب ورزشی</a>
+                    <a href="./women-product.html">جوراب ورزشی</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="./women-product.html">برند پیشنهادی</a>
+                    <a href="./women-product.html">nike</a>
+                    <a href="./women-product.html">the north face</a>
+                    <a href="./women-product.html">under armour</a>
+                    <a href="./women-product.html">adidas</a>
+                    <a href="./women-product.html">fila</a>
+                  </div>
+                </div>
+                <img class="mega__art" src="./assests/Images/menu/women.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-drop">
+            <a href="#special-offers" aria-haspopup="true">بچگانه</a>
+            <div class="mega">
+              <div class="mega__panel">
+                <div class="mega__cols">
+                  <div class="mega__col">
+                    <a class="mega__title" href="#special-offers">لباس ورزشی دخترانه</a>
+                    <a href="#special-offers">ست لباس ورزشی</a>
+                    <a href="#special-offers">تیشرت بلوز و استرج ورزشی</a>
+                    <a href="#special-offers">کیت ورزشی</a>
+                    <a href="#special-offers">سویشرت</a>
+                    <a href="#special-offers">هودی</a>
+                    <a href="#special-offers">مایو</a>
+                    <a class="mega__title" href="#special-offers">شلوار دخترانه</a>
+                    <a href="#special-offers">شلوار ورزشی</a>
+                    <a href="#special-offers">شلوارک ورزشی</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#special-offers">لباس ورزشی پسرانه</a>
+                    <a href="#special-offers">ست لباس ورزشی</a>
+                    <a href="#special-offers">تیشرت بلوز و استرج ورزشی</a>
+                    <a href="#special-offers">کیت ورزشی</a>
+                    <a href="#special-offers">سویشرت</a>
+                    <a href="#special-offers">هودی</a>
+                    <a href="#special-offers">مایو</a>
+                    <a class="mega__title" href="#special-offers">شلوار ورزشی پسرانه</a>
+                    <a href="#special-offers">شلوار ورزشی</a>
+                    <a href="#special-offers">شلوارک ورزشی</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#special-offers">کفش ورزشی دخترانه</a>
+                    <a href="#special-offers">کفش کوهنوردی</a>
+                    <a href="#special-offers">کفش اسکیت</a>
+                    <a href="#special-offers">کفش بسکتبال</a>
+                    <a href="#special-offers">استوک</a>
+                    <a class="mega__title" href="#special-offers">کفش ورزشی</a>
+                    <a href="#special-offers">کفش کوهنوردی</a>
+                    <a href="#special-offers">کفش اسکیت</a>
+                    <a href="#special-offers">کفش بسکتبال</a>
+                    <a href="#special-offers">استوک</a>
+                    <a class="mega__title" href="#special-offers">جوراب ورزشی</a>
+                    <a href="#special-offers">جوراب ورزشی</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#special-offers">برند پیشنهادی</a>
+                    <a href="#special-offers">nike</a>
+                    <a href="#special-offers">the north face</a>
+                    <a href="#special-offers">under armour</a>
+                    <a href="#special-offers">adidas</a>
+                    <a href="#special-offers">fila</a>
+                  </div>
+                </div>
+                <img class="mega__art" src="./assests/Images/menu/kids.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-drop">
+            <a href="#sport-shoes" aria-haspopup="true">لوازم ورزشی</a>
+            <div class="mega">
+              <div class="mega__panel">
+                <div class="mega__cols">
+                  <div class="mega__col">
+                    <a class="mega__title" href="#sport-shoes">وزنه و دمبل</a>
+                    <a href="#sport-shoes">لوازم یوگا و پیلاتس</a>
+                    <a href="#sport-shoes">لوازم فیتنس و بدنسازی</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#sport-shoes">مچ بند ساق بند زانو بند</a>
+                    <a href="#sport-shoes">ساک ورزشی</a>
+                    <a href="#sport-shoes">وسایل شنا</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#sport-shoes">کوله و شورتی</a>
+                    <a href="#sport-shoes">لوازم دیگر</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#sport-shoes">برند پیشنهادی</a>
+                    <a href="#sport-shoes">nike</a>
+                    <a href="#sport-shoes">under armour</a>
+                  </div>
+                </div>
+                <img class="mega__art" src="./assests/Images/menu/gear.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-drop">
+            <a href="#cycling-offers" aria-haspopup="true">شیکر و جاگ</a>
+            <div class="mega">
+              <div class="mega__panel">
+                <div class="mega__cols">
+                  <div class="mega__col">
+                    <a class="mega__title" href="#cycling-offers">شیکر</a>
+                    <a href="#cycling-offers">شیکر بدنسازی</a>
+                    <a href="#cycling-offers">مخلوط کن و شیکر برقی</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#cycling-offers">ماگ و فلاسک</a>
+                    <a href="#cycling-offers">ماگ و فلاسک</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#cycling-offers">جا پودری و جا قرصی</a>
+                    <a href="#cycling-offers">جا پودری و جا قرصی</a>
+                  </div>
+                  <div class="mega__col">
+                    <a class="mega__title" href="#cycling-offers">قمقمه ورزشی</a>
+                    <a href="#cycling-offers">قمقمه ورزشی</a>
+                  </div>
+                </div>
+                <img class="mega__art" src="./assests/Images/menu/shaker.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navigation-group navigation-group--featured">
+          <a href="#new-products">
+            <i class="bi bi-star" aria-hidden="true"></i>
+            جدیدترین محصولات
+          </a>
+
+          <a href="#special-offers">
+            <i class="bi bi-lightning" aria-hidden="true"></i>
+            تخفیفات ویژه
+          </a>
+
+          <a href="#bestsellers">
+            <i class="bi bi-patch-check" aria-hidden="true"></i>
+            پرفروشترینها
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">راحت و مطمئن خرید کنید!</p>
+
+          <h1 id="hero-title">همراه تو در مسیر سلامتی</h1>
+
+          <h2>سهم بزرگ خودتان را امروز بگیرید!</h2>
+
+          <p class="hero__description">
+            بزرگترین حراج فصل فیت لند همین حالا شروع کن و محصولات با یه
+            تخفیف شگفت انگیز بخر!
+          </p>
+
+          <a href="#special-offers" class="btn btn-navy">
+            <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+            مشاهده محصولات
+          </a>
+        </div>
+
+        <img class="hero__runner" src="./assests/Images/6.png" alt="ورزشکار در حال دویدن" fetchpriority="high" />
+
+        <div class="hero__statistics">
+          <div class="statistic">
+            <div class="statistic__icon">
+              <i class="bi bi-shop" aria-hidden="true"></i>
+            </div>
+            <div>
+              <strong>۳۰۰ +</strong>
+              <span>محصولات متنوع</span>
+            </div>
+          </div>
+
+          <div class="statistic">
+            <div class="statistic__icon">
+              <i class="bi bi-hand-thumbs-up" aria-hidden="true"></i>
+            </div>
+            <div>
+              <strong>٪ ۹۵</strong>
+              <span>رضایت مشتری</span>
+            </div>
+          </div>
+
+          <div class="statistic">
+            <div class="statistic__icon">
+              <i class="bi bi-calendar3" aria-hidden="true"></i>
+            </div>
+            <div>
+              <strong>۴ روز</strong>
+              <span>از خرید تا دریافت</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collections collections--new" id="new-products" aria-labelledby="new-products-title">
+      <div class="container">
+        <div class="collection-grid">
+          <a class="collection-card collection-card--discover" href="#special-offers">
+            <img src="./assests/Images/11.png" alt="تیشرت ورزشی سفید زنانه" loading="lazy" />
+
+            <div class="collection-card__caption">
+              <p>جدیدترین تخفیفات فصل برند پوما</p>
+              <p><span>٪ ۵۰</span> تخفیف روی تمام محصولات</p>
+            </div>
+
+            <div class="collection-card__discover">
+              <p>
+                فقط با یک کلیک وارد
+                <br />
+                دنیای محصولات جدید
+                <br />
+                شوید
+              </p>
+
+              <span class="discover-button">
+                <i class="bi bi-intersect" aria-hidden="true"></i>
+                جدیدترین محصولات
+              </span>
+            </div>
+          </a>
+
+          <a class="collection-card" href="#special-offers">
+            <img src="./assests/Images/7.png" alt="تیشرت ورزشی سبز زنانه" loading="lazy" />
+
+            <div class="collection-card__caption">
+              <p>جدیدترین تخفیفات فصل برند نایک</p>
+              <p><span>٪ ۵۰</span> تخفیف روی تمام محصولات</p>
+            </div>
+          </a>
+
+          <div class="collection-copy">
+            <h2 id="new-products-title">جدیدترین محصولات</h2>
+
+            <p>
+              جدیدترین محصولات با ارسال رایگان تهیه کنید و در سریعترین
+              زمان درب منزل تحویل بگیرید.
+            </p>
+
+            <a href="#special-offers" class="btn btn-orange">
+              <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+              مشاهده همه محصولات
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="campaign campaign--fitness">
+      <img class="campaign__image" src="./assests/Images/4.jpg" alt="ورزشکار با لباس یاسی و لوازم تناسب اندام"
+        loading="lazy" />
+
+      <div class="container campaign__inner">
+        <div class="campaign__copy">
+          <p>برای حال خوب</p>
+          <h2>لوازم ایروبیک و تناسب اندام بگیر</h2>
+
+          <a href="#special-offers" class="btn btn-navy">
+            <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+            مشاهده همه محصولات
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section product-section--peach" id="special-offers" aria-labelledby="special-offers-title">
+      <div class="container product-container">
+        <h2 class="section-title section-title--notch" id="special-offers-title">
+          <span>تخفیفات ویژه</span>
+        </h2>
+
+        <a class="view-all" href="#sport-shoes">
+          <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+          مشاهده همه
+        </a>
+
+        <div class="product-slider">
+          <button class="slider-arrow slider-arrow--previous" type="button" data-slide="previous"
+            aria-label="محصولات قبلی">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+
+          <div class="product-track" data-products="special" aria-label="محصولات با تخفیف ویژه" tabindex="0"></div>
+
+          <button class="slider-arrow slider-arrow--next" type="button" data-slide="next" aria-label="محصولات بعدی">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section product-section--shoes" id="sport-shoes" aria-labelledby="sport-shoes-title">
+      <div class="container product-container">
+        <h2 class="section-title" id="sport-shoes-title">
+          جدیدترین کفشهای ورزشی
+        </h2>
+
+        <a class="view-all" href="#cycling-offers">
+          <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+          مشاهده همه
+        </a>
+
+        <div class="product-slider">
+          <button class="slider-arrow slider-arrow--previous" type="button" data-slide="previous"
+            aria-label="کفشهای قبلی">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+
+          <div class="product-track" data-products="shoes" aria-label="کفشهای ورزشی" tabindex="0"></div>
+
+          <button class="slider-arrow slider-arrow--next" type="button" data-slide="next" aria-label="کفشهای بعدی">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="campaign campaign--cycling">
+      <img class="campaign__image" src="./assests/Images/5.jpg" alt="دوچرخهسوار در پسزمینه سبز" loading="lazy" />
+
+      <div class="container campaign__inner">
+        <div class="campaign__copy">
+          <p>برای لذت بردن از مسیر</p>
+          <h2>دوچرخه، اسکیت و اسکوتر بگیر</h2>
+
+          <a href="#cycling-offers" class="btn btn-navy">
+            <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+            مشاهده همه محصولات
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section product-section--blue" id="cycling-offers" aria-labelledby="cycling-offers-title">
+      <div class="container product-container">
+        <h2 class="section-title section-title--notch" id="cycling-offers-title">
+          <span>تخفیفات ویژه</span>
+        </h2>
+
+        <a class="view-all" href="#bestsellers">
+          <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+          مشاهده همه
+        </a>
+
+        <div class="product-slider">
+          <button class="slider-arrow slider-arrow--previous" type="button" data-slide="previous"
+            aria-label="محصولات قبلی">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+
+          <div class="product-track" data-products="cycling" aria-label="دوچرخه و اسکوتر" tabindex="0"></div>
+
+          <button class="slider-arrow slider-arrow--next" type="button" data-slide="next" aria-label="محصولات بعدی">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="collections collections--bestsellers" id="bestsellers" aria-labelledby="bestsellers-title">
+      <div class="container">
+        <div class="collection-grid">
+          <a class="collection-card" href="#special-offers">
+            <img src="./assests/Images/15.png" alt="ست ورزشی صورتی زنانه" loading="lazy" />
+
+            <div class="collection-card__caption">
+              <p>جدیدترین تخفیفات فصل برند پوما</p>
+              <p><span>٪ ۵۰</span> تخفیف روی تمام محصولات</p>
+            </div>
+          </a>
+
+          <a class="collection-card" href="#special-offers">
+            <img src="./assests/Images/16.png" alt="ست ورزشی طوسی زنانه" loading="lazy" />
+
+            <div class="collection-card__caption">
+              <p>جدیدترین تخفیفات فصل برند نایک</p>
+              <p><span>٪ ۵۰</span> تخفیف روی تمام محصولات</p>
+            </div>
+          </a>
+
+          <div class="collection-copy">
+            <h2 id="bestsellers-title">پرفروشترین محصولات</h2>
+
+            <p>
+              پرفروشترین محصولات با ارسال رایگان تهیه کنید و در سریعترین
+              زمان درب منزل تحویل بگیرید.
+            </p>
+
+            <a href="#special-offers" class="btn btn-orange">
+              <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+              مشاهده همه محصولات
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="campaign campaign--camping ">
+      <img class="campaign__image" src="./assests/Images/17.jpg" alt="تجهیزات کمپینگ، چادر و صندلی مسافرتی"
+        loading="lazy" />
+
+      <div class="container campaign__inner">
+        <div class="campaign__copy">
+          <h2>
+            بزودی کاملترین مجموعه از
+            <br />
+            لوازم کمپ در فیت لند
+          </h2>
+          <p>از سفر لذت ببر</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section" id="sport-news">
+      <div class="container">
+        <h2 class="section-title">جدیدترینها در اخبار ورزش</h2>
+
+        <div class="row g-4 g-lg-5">
+          <div class="col-12 col-md-6">
+            <article class="news-card">
+              <img class="news-card__image" src="./assests/Images/19.jpg" alt="دیوید بکهام با لباس تمرین فوتبال"
+                loading="lazy" />
+
+              <div class="news-card__body">
+                <h3>افزایش دریافتی فوتبالیستها و معافیت از سربازی</h3>
+
+                <p>
+                  خبرها حاکی از آن است که رئیس فدراسیون فوتبال اعلام کرد
+                  در فصل جاری قرارداد هر بازیکن فوتبال ۵۰ درصد افزایش
+                  پیدا میکند همچنین وی گفت...
+                </p>
+
+                <button class="btn btn-orange news-open" type="button" data-bs-toggle="modal"
+                  data-bs-target="#news-modal">
+                  <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+                  مشاهده خبر
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 news-secondary">
+            <article class="news-card">
+              <img class="news-card__image" src="./assests/Images/18.png" alt="بازیکن تیم ملی فوتبال زنان استرالیا"
+                loading="lazy" />
+
+              <div class="news-card__body">
+                <h3>شکست استرالیا در گام نخست جام جهانی فوتبال زنان!</h3>
+
+                <p>
+                  تیمها در دور اول مسابقات جام جهانی فوتبال زنان در
+                  شهر مادرید اسپانیا با یکدیگر به رقابت پرداختند.
+                </p>
+
+                <button class="btn btn-orange news-open" type="button" data-bs-toggle="modal"
+                  data-bs-target="#news-modal">
+                  <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+                  مشاهده خبر
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section" aria-label="مزایای خرید از فیتلند">
+      <div class="container">
+        <div class="benefits-layout">
+          <div class="benefits-list">
+            <div class="benefit">
+              <svg class="benefit-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="currentColor" d="M6 14h22v16H6z" />
+                <path fill="currentColor" d="M28 20h8l6 6v4h-14z" />
+                <circle cx="14" cy="34" r="3.2" fill="currentColor" />
+                <circle cx="34" cy="34" r="3.2" fill="currentColor" />
+                <path d="M14 18.5l3.2 3.2 6.2-7" fill="none" stroke="#feeee8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>ارسال سریع</span>
+            </div>
+
+            <div class="benefit">
+              <i class="bi bi-paypal" aria-hidden="true"></i>
+              <span> پرداخت قسطی (فیک)</span>
+            </div>
+
+            <div class="benefit">
+              <i class="bi bi-house-heart-fill" aria-hidden="true"></i>
+              <span>پرداخت درب منزل</span>
+            </div>
+          </div>
+
+          <h2>
+            با بیش از ده سال سابقه فروش لوازم ورزشی و لباسهای ورزشی
+          </h2>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-layout">
+        <section class="footer-social">
+          <h2>برای دریافت تخفیفهای بیشتر ما را دنبال کنید!</h2>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/" aria-label="اینستاگرام" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://telegram.org/" aria-label="تلگرام" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-telegram" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.whatsapp.com/" aria-label="واتساپ" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.youtube.com/" aria-label="یوتیوب" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <form class="newsletter" id="newsletter">
+            <label for="newsletter-email">خبرنامه فیتلند</label>
+
+            <div class="newsletter__field">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+
+              <input id="newsletter-email" type="email" placeholder="ایمیل خود را وارد کنید... ( کار نمیکنه :> )"
+                required autocomplete="email" />
+
+              <button type="submit">ثبت</button>
+            </div>
+
+            <p class="newsletter__status" role="status"></p>
+          </form>
+        </section>
+
+        <nav class="footer-links" aria-label="پیوندهای راهنما">
+          <section class="footer-group footer-group--guide">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-guide">
+                راهنمای خرید
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-guide">
+              <li><a href="#new-products">راهنمای ثبت سفارش</a></li>
+              <li><a href="#newsletter">شیوههای پرداخت</a></li>
+              <li><a href="#newsletter">نحوه ارسال سفارشها</a></li>
+              <li><a href="#newsletter">نحوه پیگیری محصول</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--popular">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-popular">
+                محبوبترینها
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-popular">
+              <li><a href="#bestsellers">لباس مردانه</a></li>
+              <li><a href="#sport-shoes">کفش فوتبال</a></li>
+              <li><a href="#cycling-offers">دوچرخه</a></li>
+              <li><a href="#new-products">لباس زنانه</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--contact">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-contact">
+                اطلاعات تماس
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-contact">
+              <li>نشانی فروشگاه را اینجا وارد کنید</li>
+              <li>شماره تماس فروشگاه را وارد کنید</li>
+              <li>
+                پست الکترونیک
+                <span class="footer-accent" dir="ltr">
+                  hello@example.com
+                </span>
+              </li>
+              <li>ساعت کاری شنبه تا چهارشنبه 9 تا 17</li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--service">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-service">
+                خدمات مشتریان
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-service">
+              <li><a href="./faq.html">سوالات متداول</a></li>
+              <li><a href="#newsletter">حریم خصوصی</a></li>
+              <li><a href="#newsletter">گزارش ایراد در سایت</a></li>
+              <li><a href="#newsletter">شرایط بازگرداندن محصول</a></li>
+            </ul>
+          </section>
+        </nav>
+
+        <section class="footer-about">
+          <h2>فروشگاه اینترنتی فیتلند</h2>
+
+          <div class="footer-about__text" id="about-text">
+            <p>
+              فروشگاه لوازم ورزشی فیتلند در سال ۱۴۰۳ کار خود را به صورت
+              حرفهای آغاز کرد و با هدف ارائه جدیدترین محصولات ورزشی از
+              قبیل لوازم فوتبال، فوتسال، والیبال، بسکتبال، تنیس و همچنین
+              پوشاک ورزشی و تجهیزات سفر فعالیت میکند. همراه با گارانتی
+              اصالت و سلامت فیزیکی و با سریعترین روشهای ارسال، محصولات
+              در اختیار مشتریان قرار میگیرد.
+            </p>
+          </div>
+
+          <button class="about-more" type="button" aria-expanded="false" aria-controls="about-text">
+            مشاهده بیشتر...
+          </button>
+        </section>
+
+        <div class="footer-trust">
+          <div class="trust-logos">
+            <img src="./assests/Images/enamad.jpg" alt="نماد اعتماد الکترونیکی" loading="lazy" />
+            <img src="./assests/Images/shahrokh.jpg" alt="نشان ساماندهی" loading="lazy" />
+            <img src="./assests/Images/etehadie.jpg" alt="نشان اتحادیه کسبوکارهای مجازی" loading="lazy" />
+          </div>
+
+          <p>یک هفته ضمانت بازگشت (اینم فیکه) <span aria-hidden="true">👍👍</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          <i class="bi bi-shield-lock" aria-hidden="true"></i>
+          تمامی حقوق حقوقی و معنوی این وبسایت برای مجموعه فیتلند محفوظ
+          میباشد. (همش دست ماست)
+        </p>
+
+        <p>
+          <i class="bi bi-buildings" aria-hidden="true"></i>
+          طراحی شده توسط I.GH و A.bol
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobile-menu" aria-labelledby="mobile-menu-title">
+    <div class="offcanvas-header">
+      <h2 class="brand__name" id="mobile-menu-title" dir="ltr">FitLand</h2>
+
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="بستن منو"></button>
+    </div>
+
+    <div class="offcanvas-body mobile-navigation">
+      <a href="#new-products">جدیدترین محصولات</a>
+      <a href="#special-offers">تخفیفات ویژه</a>
+      <a href="#sport-shoes">کفشهای ورزشی</a>
+      <a href="#cycling-offers">دوچرخه و اسکوتر</a>
+      <a href="#bestsellers">پرفروشترینها</a>
+      <a href="#sport-news">اخبار ورزش</a>
+    </div>
+  </div>
+
+  <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="cart-title">سبد خرید</h2>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="بستن"></button>
+        </div>
+
+        <div class="modal-body">سبد خرید شما خالی است.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="news-modal" tabindex="-1" aria-labelledby="news-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="news-modal-title"></h2>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="بستن"></button>
+        </div>
+
+        <div class="modal-body" id="news-modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="visually-hidden" id="search-status" role="status"></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./home.js"></script>
+</body>
+
+</html>

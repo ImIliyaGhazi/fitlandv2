@@ -1,0 +1,279 @@
+.fit-field {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding-top: 10px;
+  color: #8c8c8c;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.fit-field > span,
+.fit-field > .form-label {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 1;
+  margin: 0;
+  padding: 0 6px;
+  color: #8c8c8c;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.fit-field input,
+.fit-field #identity,
+.fit-field #phone,
+.fit-field #email {
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  padding: 0 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: none;
+  direction: rtl;
+  color: #384a58;
+  background: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: right;
+  appearance: none;
+}
+
+.fit-field input::placeholder {
+  color: #b0b0b0;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.fit-field:focus-within > span,
+.fit-field:focus-within > .form-label {
+  color: #384a58;
+  background: #d1e3f1;
+}
+
+.fit-field input:focus {
+  border-color: #384a58;
+  background: #d1e3f1;
+  color: #384a58;
+  box-shadow: none;
+}
+
+.fit-field:has(input.is-invalid) > span,
+.fit-field:has(input.is-invalid) > .form-label,
+.fit-field:has(input:user-invalid) > span,
+.fit-field:has(input:user-invalid) > .form-label {
+  color: #885854;
+  background: #fee9ee;
+}
+
+.fit-field input.is-invalid,
+.fit-field input.is-invalid:focus,
+.fit-field input:user-invalid,
+.fit-field input:user-invalid:focus {
+  border-color: #d7a3a0;
+  background: #fee9ee;
+  color: #384a58;
+  box-shadow: none;
+}
+
+.fit-field .field-error {
+  margin: 6px 8px 0 0;
+  color: #885854;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.fit-field--hint:not(:has(.field-error)):has(input.is-invalid)::after,
+.fit-field--hint:not(:has(.field-error)):has(input:user-invalid)::after {
+  content: "اطلاعات وارد شده اشتباه است!";
+  display: block;
+  margin: 6px 8px 0 0;
+  color: #885854;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.fit-field .form-control.is-valid,
+.fit-field .form-control.is-valid:focus,
+.fit-field .form-control.has-value {
+  border-color: #384a58;
+  background: #fff;
+  color: #384a58;
+  box-shadow: none;
+}
+
+.fit-field .form-control.is-valid:focus,
+.fit-field .form-control.has-value:focus,
+.fit-field:focus-within .form-control.has-value,
+.fit-field:focus-within .form-control.is-valid {
+  background: #d1e3f1;
+}
+
+.fit-field .clear-button {
+  top: 14px;
+  color: #384a58;
+}
+
+.fit-field:has(input.is-invalid) .clear-button {
+  color: #885854;
+}
+
+label.price-field.fit-field {
+  display: block;
+  margin-bottom: 18px;
+}
+
+label.price-field.fit-field > span {
+  width: auto;
+}
+
+.address-form label.fit-field,
+label.account-field.fit-field {
+  display: block;
+  gap: 0;
+}
+
+.fit-select {
+  position: relative;
+  display: block;
+  min-width: 0;
+}
+
+.float-field > .fit-select,
+.address-form .fit-select {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+}
+
+.address-form > label:has(.fit-select.is-open),
+.float-field:has(.fit-select.is-open) {
+  z-index: 40;
+}
+
+.address-form .fit-select__native,
+.float-field .fit-select__native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: none;
+}
+
+.fit-select__face {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 12px 0 44px;
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  color: #1d2430;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath d='M0 0h2.2L4 2.4 5.8 0H8L4 5z' fill='%231d2430'/%3E%3C/svg%3E") no-repeat left 22px center / 8px 5px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: right;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.address-form .fit-select__face {
+  height: 42px;
+  border-radius: 10px;
+}
+
+.float-field .fit-select__face {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border-radius: 12px;
+  border-color: #dedede;
+}
+
+.fit-select.is-open .fit-select__face {
+  border-color: #03243e;
+}
+
+.fit-select__face:focus-visible {
+  outline: 2px solid #03243e;
+  outline-offset: 2px;
+}
+
+.fit-select__menu {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 6px);
+  right: 0;
+  left: 0;
+  max-height: min(280px, 46vh);
+  margin: 0;
+  padding: 6px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(3, 36, 62, 0.14);
+}
+
+.fit-select__menu::-webkit-scrollbar {
+  display: none;
+}
+
+.fit-select__option {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 8px;
+  color: #1d2430;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: right;
+  cursor: pointer;
+}
+
+.fit-select__option:hover,
+.fit-select__option:focus-visible {
+  background: #f6f8fb;
+  outline: none;
+}
+
+.fit-select__option.is-selected {
+  color: #fff;
+  background: #03243e;
+}

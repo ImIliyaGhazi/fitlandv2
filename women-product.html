@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#041827">
+    <title>فیتلند | محصولات ورزشی</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/women-product.css?v=3">
+    <link rel="stylesheet" href="./styles/fit-input.css">
+    <style>
+      ul,
+      ol,
+      li {
+        list-style: none;
+      }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container-fit header-main">
+            <button class="icon-button mobile-menu" type="button" aria-label="باز کردن منو" data-bs-toggle="offcanvas"
+                data-bs-target="#navigation">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <a class="brand" href="./home.html" aria-label="صفحه اصلی فیتلند">
+                <strong dir="ltr">FitLand</strong>
+                <span>فروشگاه لوازم ورزشی فیت لند</span>
+            </a>
+
+            <form class="search-box" id="searchForm" role="search">
+                <button type="submit" aria-label="جستوجو">
+                    <i class="bi bi-search"></i>
+                </button>
+                <input id="productSearch" type="search" placeholder="جستجو" aria-label="جستوجوی محصولات"
+                    autocomplete="off">
+            </form>
+
+            <div class="header-actions">
+                <a class="icon-button account-button" id="accountButton" href="./profile.html" aria-label="حساب کاربری">
+                    <i class="bi bi-person"></i>
+                </a>
+
+                <button class="icon-button cart-button" type="button" aria-label="نمایش سبد خرید"
+                    data-bs-toggle="offcanvas" data-bs-target="#cartPanel">
+                    <i class="bi bi-bag"></i>
+                    <span id="cartCount" class="cart-count">۰</span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="container-fit desktop-nav" aria-label="دستهبندی محصولات">
+            <div class="nav-group">
+                <button type="button" data-category="مردانه">مردانه</button>
+                <button type="button" data-category="زنانه"><a href="#">زنانه</a></button>
+                <button type="button" data-category="بچگانه">بچگانه</button>
+                <button type="button" data-category="لوازم ورزشی">لوازم ورزشی</button>
+                <button type="button" data-category="شیکر و جاگ">شیکر و جاگ</button>
+            </div>
+
+            <div class="nav-group special-links">
+                <button type="button" data-sort-shortcut="newest">
+                    <i class="bi bi-star"></i> جدیدترین محصولات
+                </button>
+                <button type="button" id="discountShortcut">
+                    <i class="bi bi-lightning"></i> تخفیفات ویژه
+                </button>
+                <button type="button" data-sort-shortcut="sales">
+                    <i class="bi bi-award"></i> پرفروشترینها
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fit">
+        <nav class="breadcrumb-line" aria-label="مسیر صفحه">
+            <button type="button" data-category="زنانه">زنانه</button>
+            <i class="bi bi-arrow-left"></i>
+            <span>لباس زنانه</span>
+            <i class="bi bi-arrow-left"></i>
+            <strong>تیشرت زنانه</strong>
+        </nav>
+
+        <div class="catalog-layout">
+            <aside class="offcanvas-lg offcanvas-end filter-panel" tabindex="-1" id="filtersPanel"
+                aria-labelledby="filtersTitle">
+                <div class="offcanvas-header d-lg-none">
+                    <h2 class="offcanvas-title fs-6" id="filtersTitle">فیلتر محصولات</h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#filtersPanel"
+                        aria-label="بستن"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <div class="filters-inner">
+                        <div class="filter-heading">
+                            <strong>فیلترها</strong>
+                            <button type="button" id="resetFilters">حذف فیلترها</button>
+                        </div>
+
+                        <label class="toggle-row">
+                            <span>محصولات موجود</span>
+                            <input id="stockFilter" type="checkbox" class="switch-input">
+                        </label>
+
+                        <label class="toggle-row">
+                            <span>محصولات تخفیفدار</span>
+                            <input id="discountFilter" type="checkbox" class="switch-input">
+                        </label>
+
+                        <details class="filter-section" open>
+                            <summary>قیمت <i class="bi bi-chevron-up"></i></summary>
+
+                            <label class="price-field fit-field">
+                                <span>بیشترین</span>
+                                <input id="maxPrice" inputmode="numeric" placeholder="وارد کنید"
+                                    aria-label="بیشترین قیمت">
+                            </label>
+
+                            <label class="price-field fit-field">
+                                <span>کمترین</span>
+                                <input id="minPrice" inputmode="numeric" placeholder="وارد کنید"
+                                    aria-label="کمترین قیمت">
+                            </label>
+
+                            <div class="dual-range" dir="ltr">
+                                <div class="range-track" id="rangeTrack"></div>
+                                <input id="minRange" type="range" min="0" max="500000" step="10000" value="0"
+                                    aria-label="حداقل قیمت">
+                                <input id="maxRange" type="range" min="0" max="500000" step="10000" value="500000"
+                                    aria-label="حداکثر قیمت">
+                            </div>
+
+                            <div class="range-labels" dir="ltr">
+                                <span>Min</span><span>Max</span>
+                            </div>
+                        </details>
+
+                        <details class="filter-section" open>
+                            <summary>رنگ <i class="bi bi-chevron-up"></i></summary>
+                            <div id="colorFilters" class="filter-colors"></div>
+                        </details>
+
+                        <details class="filter-section" open>
+                            <summary>سایز <i class="bi bi-chevron-up"></i></summary>
+                            <div id="sizeFilters" class="choice-grid size-grid" dir="ltr"></div>
+                        </details>
+
+                        <details class="filter-section" open>
+                            <summary>برند <i class="bi bi-chevron-up"></i></summary>
+
+                            <label class="brand-search">
+                                <i class="bi bi-search"></i>
+                                <input type="search" id="brandSearch" placeholder="جستجو" aria-label="جستوجوی برند">
+                            </label>
+
+                            <div id="brandFilters" class="choice-grid brand-grid" dir="ltr"></div>
+                        </details>
+
+                        <button class="btn btn-orange w-100 d-lg-none mt-3" type="button" data-bs-dismiss="offcanvas"
+                            data-bs-target="#filtersPanel">
+                            نمایش نتایج
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="products-section" aria-label="فهرست محصولات">
+                <div class="catalog-toolbar">
+                    <button class="mobile-filter-button" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#filtersPanel">
+                        <i class="bi bi-sliders"></i>
+                        فیلترها
+                        <span id="filterCount" hidden></span>
+                    </button>
+
+                    <div class="desktop-sort" role="group" aria-label="مرتبسازی">
+                        <button type="button" data-sort="views" class="active">پربازدیدترین</button>
+                        <button type="button" data-sort="newest">جدیدترین</button>
+                        <button type="button" data-sort="sales">پرفروشترین</button>
+                        <button type="button" data-sort="expensive">گرانترین</button>
+                        <button type="button" data-sort="cheap">ارزانترین</button>
+                    </div>
+
+                    <button class="mobile-sort-button" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#sortPanel">
+                        <i class="bi bi-sort-down"></i>
+                        <span>مرتبسازی بر اساس</span>
+                    </button>
+
+                    <span id="resultCount" class="result-count" role="status"></span>
+                </div>
+
+                <div class="active-filters" id="activeFilters"></div>
+
+                <div id="productGrid" class="product-grid"></div>
+
+                <div id="emptyState" class="empty-state" hidden>
+                    <i class="bi bi-search"></i>
+                    <h2>محصولی پیدا نشد</h2>
+                    <p>جستوجو یا فیلترها را تغییر بدهید.</p>
+                    <button type="button" class="btn btn-orange" id="emptyReset">
+                        نمایش همه محصولات
+                    </button>
+                </div>
+
+                <nav id="pagination" class="pagination-fit" aria-label="صفحهبندی محصولات"></nav>
+            </section>
+        </div>
+    </main>
+
+      <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-layout">
+        <section class="footer-social">
+          <h2>برای دریافت تخفیفهای بیشتر ما را دنبال کنید!</h2>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/" aria-label="اینستاگرام" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://telegram.org/" aria-label="تلگرام" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-telegram" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.whatsapp.com/" aria-label="واتساپ" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.youtube.com/" aria-label="یوتیوب" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <form class="newsletter" id="newsletter">
+            <label for="newsletter-email">خبرنامه فیتلند</label>
+
+            <div class="newsletter__field">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+
+              <input id="newsletter-email" type="email" placeholder="ایمیل خود را وارد کنید... ( کار نمیکنه :> )"
+                required autocomplete="email" />
+
+              <button type="submit">ثبت</button>
+            </div>
+
+            <p class="newsletter__status" role="status"></p>
+          </form>
+        </section>
+
+        <nav class="footer-links" aria-label="پیوندهای راهنما">
+          <section class="footer-group footer-group--guide">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-guide">
+                راهنمای خرید
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-guide">
+              <li><a href="#new-products">راهنمای ثبت سفارش</a></li>
+              <li><a href="#newsletter">شیوههای پرداخت</a></li>
+              <li><a href="#newsletter">نحوه ارسال سفارشها</a></li>
+              <li><a href="#newsletter">نحوه پیگیری محصول</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--popular">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-popular">
+                محبوبترینها
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-popular">
+              <li><a href="#bestsellers">لباس مردانه</a></li>
+              <li><a href="#sport-shoes">کفش فوتبال</a></li>
+              <li><a href="#cycling-offers">دوچرخه</a></li>
+              <li><a href="#new-products">لباس زنانه</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--contact">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-contact">
+                اطلاعات تماس
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-contact">
+              <li>نشانی فروشگاه را اینجا وارد کنید</li>
+              <li>شماره تماس فروشگاه را وارد کنید</li>
+              <li>
+                پست الکترونیک
+                <span class="footer-accent" dir="ltr">
+                  hello@example.com
+                </span>
+              </li>
+              <li>ساعت کاری شنبه تا چهارشنبه 9 تا 17</li>
+            </ul>
+          </section>
+
+          <section class="footer-group footer-group--service">
+            <h2>
+              <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-service">
+                خدمات مشتریان
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+
+            <ul id="footer-service">
+              <li><a href="./faq.html">سوالات متداول</a></li>
+              <li><a href="#newsletter">حریم خصوصی</a></li>
+              <li><a href="#newsletter">گزارش ایراد در سایت</a></li>
+              <li><a href="#newsletter">شرایط بازگرداندن محصول</a></li>
+            </ul>
+          </section>
+        </nav>
+
+        <section class="footer-about">
+          <h2>فروشگاه اینترنتی فیتلند</h2>
+
+          <div class="footer-about__text" id="about-text">
+            <p>
+              فروشگاه لوازم ورزشی فیتلند در سال ۱۴۰۳ کار خود را به صورت
+              حرفهای آغاز کرد و با هدف ارائه جدیدترین محصولات ورزشی از
+              قبیل لوازم فوتبال، فوتسال، والیبال، بسکتبال، تنیس و همچنین
+              پوشاک ورزشی و تجهیزات سفر فعالیت میکند. همراه با گارانتی
+              اصالت و سلامت فیزیکی و با سریعترین روشهای ارسال، محصولات
+              در اختیار مشتریان قرار میگیرد.
+            </p>
+          </div>
+
+          <button class="about-more" type="button" aria-expanded="false" aria-controls="about-text">
+            مشاهده بیشتر...
+          </button>
+        </section>
+
+        <div class="footer-trust">
+          <div class="trust-logos">
+            <img src="./assests/Images/enamad.jpg" alt="نماد اعتماد الکترونیکی" loading="lazy" />
+            <img src="./assests/Images/shahrokh.jpg" alt="نشان ساماندهی" loading="lazy" />
+            <img src="./assests/Images/etehadie.jpg" alt="نشان اتحادیه کسبوکارهای مجازی" loading="lazy" />
+          </div>
+
+          <p>یک هفته ضمانت بازگشت (اینم فیکه) <span aria-hidden="true">👍👍</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          <i class="bi bi-shield-lock" aria-hidden="true"></i>
+          تمامی حقوق حقوقی و معنوی این وبسایت برای مجموعه فیتلند محفوظ
+          میباشد. (همش دست ماست)
+        </p>
+
+        <p>
+          <i class="bi bi-buildings" aria-hidden="true"></i>
+          طراحی شده توسط I.GH و A.bol
+        </p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- منوی موبایل -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navigation" aria-labelledby="navigationTitle">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title fs-5" id="navigationTitle">FitLand</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="بستن"></button>
+        </div>
+        <div class="offcanvas-body mobile-navigation">
+            <button type="button" data-category="زنانه">زنانه</button>
+            <button type="button" data-category="مردانه">مردانه</button>
+            <button type="button" data-category="بچگانه">بچگانه</button>
+            <button type="button" data-category="لوازم ورزشی">لوازم ورزشی</button>
+            <button type="button" data-category="شیکر و جاگ">شیکر و جاگ</button>
+        </div>
+    </div>
+
+    <!-- مرتبسازی موبایل -->
+    <div class="offcanvas offcanvas-bottom sort-panel" tabindex="-1" id="sortPanel" aria-labelledby="sortTitle">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title fs-6" id="sortTitle">مرتبسازی بر اساس</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="بستن"></button>
+        </div>
+        <div class="offcanvas-body sort-options">
+            <button type="button" data-sort="views">پربازدیدترین</button>
+            <button type="button" data-sort="newest">جدیدترین</button>
+            <button type="button" data-sort="sales">پرفروشترین</button>
+            <button type="button" data-sort="expensive">گرانترین</button>
+            <button type="button" data-sort="cheap">ارزانترین</button>
+        </div>
+    </div>
+
+    <!-- سبد خرید -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel" aria-labelledby="cartTitle">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title fs-5" id="cartTitle">سبد خرید</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="بستن"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <span>مجموع</span>
+                <strong id="cartTotal">۰ تومان</strong>
+            </div>
+            <a class="btn btn-orange w-100 mt-3" href="./checkout.html">ادامه و تکمیل سفارش</a>
+            <p class="small text-secondary mt-3">
+                ثبت نهایی سفارش، آدرس و پرداخت در صفحه سبد خرید انجام می‌شود.
+            </p>
+        </div>
+    </div>
+
+    <!-- جزئیات محصول -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-6" id="productModalTitle"></h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="بستن"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div id="modalPhoto" class="modal-photo"></div>
+                    <p id="modalPrice" class="fw-bold mt-3"></p>
+                    <p id="modalBrand" class="small text-secondary"></p>
+
+                    <fieldset class="mb-3">
+                        <legend class="fs-6">انتخاب سایز</legend>
+                        <div id="modalSizes" class="modal-choices" dir="ltr"></div>
+                    </fieldset>
+
+                    <fieldset class="mb-3">
+                        <legend class="fs-6">انتخاب رنگ</legend>
+                        <div id="modalColors" class="filter-colors"></div>
+                    </fieldset>
+
+                    <label class="d-flex align-items-center gap-3">
+                        تعداد
+                        <input id="modalQuantity" class="form-control quantity-input" type="number" min="1" max="10"
+                            value="1">
+                    </label>
+
+                    <button id="addToCart" class="btn btn-orange w-100 mt-4" type="button">
+                        افزودن به سبد خرید
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- پنجره اطلاعات -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-6" id="infoTitle"></h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="بستن"></button>
+                </div>
+                <div class="modal-body" id="infoBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-pop" id="cartPop" hidden>
+        <div class="cart-pop__card" role="status" aria-live="polite">
+            <div class="cart-pop__head">
+                <p>این کالا به سبد خریدت اضافه شد!</p>
+                <button class="cart-pop__close" id="cartPopClose" type="button" aria-label="بستن">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="cart-pop__product">
+                <div class="cart-pop__photo" id="cartPopPhoto"></div>
+                <div>
+                    <strong id="cartPopTitle"></strong>
+                    <p class="cart-pop__color"><span id="cartPopColor"></span><i id="cartPopSwatch"></i></p>
+                </div>
+            </div>
+            <button class="cart-pop__go" id="cartPopGo" type="button">
+                <span>مشاهده سبد خرید</span>
+                <i class="bi bi-eye" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+        <div id="appToast" class="toast border-0" role="status" aria-live="polite" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastText"></div>
+                <button type="button" class="btn-close m-auto me-2" data-bs-dismiss="toast" aria-label="بستن"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./women-product.js"></script>
+</body>
+
+</html>
